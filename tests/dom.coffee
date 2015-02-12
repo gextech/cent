@@ -12,7 +12,7 @@ describe 'minidollar', ->
     afterEach test.end
 
     it 'should match single elements', ->
-      expect($('#unique').tagName).toBe 'DIV'
+      expect($('#unique')[0].tagName).toBe 'DIV'
 
   # CLASS
   describe '.class selector', ->
@@ -72,18 +72,22 @@ describe 'minidollar', ->
 
     afterEach test.end
 
+    it 'can iterate nodes', ->
+      count = 0
+
+      $('*data').each (node) ->
+        count += 1
+
+      expect(count).toBe 3
+
     it 'can read attributes', ->
-      expect($('.empty').getAttribute('class')).toBe 'empty'
+      expect($('.empty').attr('class')).toBe 'empty'
 
-    it 'can write attributes', ->
-      $('*data').setAttribute('foo', 'bar')
-      expect($('.raw_data').getAttribute('foo')).toBe 'bar'
+    it 'can read data-attributes', ->
+      expect($('.raw_data').data()).toEqual value: 'scalar', bool: true, int: 10
 
-    it 'can read (only) data-attributes', ->
-      expect($('*data')[1].data()).toEqual value: 'scalar', bool: true, int: 10
-
-    it 'can read (only) JSON from data-attributes', ->
+    it 'can read JSON from data-attributes', ->
       expect($('.mixed_data').data('json-value')).toEqual key: 'value'
 
     it 'can play through the classList API', ->
-      expect($('.empty').classList.contains('empty')).toBe true
+      expect($('.empty').hasClass('empty')).toBe true
