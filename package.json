@@ -1,6 +1,6 @@
 {
   "name": "minidollar",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Small dollar-wrapper with DOM shortcuts",
   "main": "lib/minidollar.js",
   "repository": {
