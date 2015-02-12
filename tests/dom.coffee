@@ -66,7 +66,7 @@ describe 'minidollar', ->
   describe 'wrapped elements', ->
     beforeEach (test = _.loadFixture '''
       <data class="empty"></data>
-      <data class="raw_data" data-value="scalar"></data>
+      <data class="raw_data" data-value="scalar" data-int="10" data-bool="true"></data>
       <data class="mixed_data" data-json-value="{&quot;key&quot;:&quot;value&quot;}"></data>
     ''').begin
 
@@ -80,7 +80,7 @@ describe 'minidollar', ->
       expect($('.raw_data').getAttribute('foo')).toBe 'bar'
 
     it 'can read (only) data-attributes', ->
-      expect($('*data')[1].data()).toEqual value: 'scalar'
+      expect($('*data')[1].data()).toEqual value: 'scalar', bool: true, int: 10
 
     it 'can read (only) JSON from data-attributes', ->
       expect($('.mixed_data').data('json-value')).toEqual key: 'value'
