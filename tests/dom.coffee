@@ -1,7 +1,7 @@
-$ = require('../lib/minidollar')
+$ = require('../lib')
 _ = require('./helpers')
 
-describe 'minidollar', ->
+describe 'cent', ->
 
   # ID
   describe '#id selector', ->

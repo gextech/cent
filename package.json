@@ -1,14 +1,14 @@
 {
-  "name": "minidollar",
-  "version": "0.1.0",
+  "name": "cent",
+  "version": "0.0.0",
   "description": "Small dollar-wrapper with DOM shortcuts",
-  "main": "lib/minidollar.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/pateketrueke/minidollar.git"
+    "url": "git://github.com/gextech/cent.git"
   },
   "bugs": {
-    "url": "https://github.com/pateketrueke/minidollar/issues"
+    "url": "https://github.com/gextech/cent/issues"
   },
   "author": {
     "name": "Alvaro Cabrera",
@@ -17,7 +17,7 @@
   "license": "MIT",
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-parts": "^0.3.2"
+    "grunt-parts": "^0.3.3"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
